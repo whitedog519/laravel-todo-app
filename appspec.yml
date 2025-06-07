@@ -15,6 +15,9 @@ hooks:
     - location: scripts/restore_env.sh
       timeout: 300
       runas: root
+    - location: scripts/refresh_cache.sh
+      timeout: 300
+      runas: root
     - location: scripts/permissions.sh
       timeout: 5
       runas: root
