@@ -6,26 +6,26 @@ files:
 hooks:
   BeforeInstall:
     - location: scripts/backup.sh
-      timeout: 300
+      timeout: 10
       runas: root
   AfterInstall:
     - location: scripts/install_dependencies.sh
-      timeout: 300
+      timeout: 60
       runas: root
     - location: scripts/restore_env.sh
-      timeout: 300
+      timeout: 10
       runas: root
     - location: scripts/refresh_cache.sh
-      timeout: 300
+      timeout: 10
       runas: root
     - location: scripts/permissions.sh
-      timeout: 5
+      timeout: 10
       runas: root
   ApplicationStart:
     - location: scripts/start_server.sh
-      timeout: 300
+      timeout: 60
       runas: ec2-user
   ValidateService:
     - location: scripts/health_check.sh
-      timeout: 300
+      timeout: 10
       runas: ec2-user
